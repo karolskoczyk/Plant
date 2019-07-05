@@ -79,13 +79,16 @@ class FavPlant extends React.Component {
     })
      }
 
-     onPressAdd = async(keyPlants) => {
+     onPressAdd = async() => {
        if (this.state.newNote === '') {
           alert('Note is blank');
           return;
        }
-       const keyPlantss = String(keyPlants);
-       currentUser = await firebase.auth().currentUser
+       
+       const { navigation } = this.props;
+       const keyPlant = navigation.getParam('keyPlant');
+       const keyPlantss = String(keyPlant);
+       currentUser = await firebase.auth().currentUser;
 
        firebase.database().ref(currentUser.uid).child('plantList').child(keyPlantss).update({
          note: this.state.newNote

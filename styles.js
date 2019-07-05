@@ -114,6 +114,13 @@ var styles = StyleSheet.create({
           height:40, 
           alignSelf: "stretch", 
           fontSize: 18, },
+        
+          textWatering: {
+          fontWeight: 'bold',
+          fontSize: 18,
+          textAlign: 'center'
+
+        }
 })
 
 module.exports = styles;
